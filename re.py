@@ -178,8 +178,7 @@ Informally, it represents the boundary between words.
 The sequence \B matches the empty string anywhere else.
 '''
 
-pattern = r"\b(cat)\b"
-#basically matches the word "cat" surrounded by word boundaries.
+pattern = r"\b(cat)\b" #basically matches the word "cat" surrounded by word boundaries.
 
 
 match = re.search(pattern, "The cat sat!")
