@@ -6,23 +6,27 @@ They are useful for two main tasks:
 - verifying that strings match a pattern (for instance, that a string has the format of an email address),
 - performing substitutions in a string 
 '''
+
 '''
-We use a raw string, which is a normal string with an "r" in front of it. 
-To avoid constantly having to escape literal metacharacters in our string
+We use a raw string, which is a normal string with an "r" in front of it. To avoid constantly having to escape literal metacharacters in our string
 '''
-pattern = r'spam'
+pattern = r'or'
 
 
 '''
 After you've defined a regular expression, the re.match function can be used to determine whether it matches at the beginning of a string.
 '''
-if re.match(pattern, "spamspamspam"):
+if re.match(pattern, "orange"):
     print("Yes")
 
 '''
 The function re.search finds a match of a pattern anywhere in the string.
 '''
-match = re.search(pattern, "eggspamspameggsausausagespam")
+
+if re.search(pattern, "door"):
+    print("Yes")
+
+match = re.search('fun', "defunct")
 if match:
     '''
     These methods include group which returns the string matched, 
@@ -37,12 +41,12 @@ if match:
 '''
 The function re.findall returns a list of all substrings that match a pattern.
 '''
-print(re.findall(pattern, "eggspamspameggsausausagespam"))
+print(re.findall('pan', "panelistspan"))
 
 '''
 The function re.finditer does the same thing as re.findall, except it returns an iterator, rather than a list.
 '''
-for i in re.finditer(pattern, "eggspamspameggsausausagespam"):
+for i in re.finditer('pan', "panelistspan"):
     print(i)
 
 
@@ -78,14 +82,16 @@ r'[^A-Z]' #gives all lower case characters
 The metacharacter * means "zero or more repetitions of the previous thing". 
 It tries to match as many repetitions as possible. 
 
+'''
 
-pattern = r"egg(spam)*" 
-if re.match(pattern, "eggspamspamegg"): 
-this will pass because spam in () can be repeated 0 or more times
-It matches strings that start with "egg" and follow with zero or more "spam"s.
+pattern = r"cup(soon)*" 
+if re.match(pattern, "cupsoonsoontake"): 
+    print(True) #this will pass because spam in () can be repeated 0 or more times. 
+                #It matches strings that start with "cup" and follow with zero or more "soon"s.
 
-r'[a^]*'  matches Zero or more repetitions of "a" or "^"
+r'[a^]*'  #matches zero or more repetitions of "a" or "^"
 
+'''
 The metacharacter + is very similar to *, except it means "one or more repetitions", as opposed to "zero or more repetitions".
 
 The metacharacter ? means "zero or one repetitions".
@@ -99,8 +105,10 @@ Hence {0,1} is the same thing as ?.
 If the first number is missing, it is taken to be zero. If the second number is missing, it is taken to be infinity.
 
 For groups, () are used and []
-r'([^aeiou][aeiou][^aeiou])+' matches one or more repetitions of a non-vowel, a vowel and a non-vowel
+'''
+r'([^aeiou][aeiou][^aeiou])+' #matches one or more repetitions of a non-vowel, a vowel and a non-vowel
 
+'''
 The content of groups in a match can be accessed using the group function.
 A call of group(0) or group() returns the whole match.
 A call of group(n), where n is greater than 0, returns the nth group from the left.
