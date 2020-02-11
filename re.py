@@ -200,7 +200,7 @@ a period (.) in a pattern is preceeded by a \ to treat is a character
 '''
 
 pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
-text = "Please contact contactaniekan@gmail.com for assistance"
+text = "Please contact example@gmail.com for assistance"
 
 match = re.search(pattern, text)
 if match:
