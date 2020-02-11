@@ -196,7 +196,7 @@ if match:
 
 '''
 [\w\.-]+ matches one or more word character, dot or dash.
-a . in a pattern is preceeded by a \ to treat is a character
+a period (.) in a pattern is preceeded by a \ to treat is a character
 '''
 
 pattern = r"([\w\.-]+)@([\w\.-]+)(\.[\w\.]+)"
