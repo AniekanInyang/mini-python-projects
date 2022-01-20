@@ -4,7 +4,7 @@
 # target number = 7
 # output the index of the number, else return -1
 
-# function
+# Search function
 def search_array(arr, target_num):
     low_index = 0 # low index pointer set to first index of array
     high_index = len(arr) - 1 # high pointer set to last index of array
